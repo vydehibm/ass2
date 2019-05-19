@@ -1,17 +1,15 @@
 package com.frosters.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Inventory {
 
 	private long skuId;
-
 	private String productName;
-
 	private String  productLabel;
-
 	private int inventoryOnHand;
-
 	private int minQtyReq;
-
 	private double price;
 
 	public long getSkuId() {
