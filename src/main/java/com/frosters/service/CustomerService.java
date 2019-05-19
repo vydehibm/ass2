@@ -1,6 +1,7 @@
 package com.frosters.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,9 @@ public class CustomerService {
 	
 	public List<Customer> getAllCustomers(){
 		return customerRepository.findAll();
+	}
+
+	public Optional<Customer> getSpecificCustomer(long customerId) {
+		return customerRepository.findById(customerId);
 	}
 }
