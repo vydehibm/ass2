@@ -1,17 +1,16 @@
 package com.frosters.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Vendor {
-	
+	@Id
 	private long vendorId;
-
 	private String vendorName;
-
 	private long vendorContactNo;
-
 	private String vendorEmail;
-
 	private String vendorUsername;
-
 	private String vendorAddress;
 
 	public long getVendorId() {
