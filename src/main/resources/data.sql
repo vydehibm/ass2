@@ -20,3 +20,14 @@ insert into Vendor
 values(2,'Milford, OH - 45150',9845036939,'Kroger@gmail.com','Kroger','KrogerMilford');
 insert into Vendor
 values(3,'Milford, OH - 45150',9845076939,'Meijer@gmail.com','Meijer','MeijerMilford');
+
+insert into Inventory 
+values (1,20,1,25.99,'BlenderLabel','Blender');
+insert into Inventory 
+values (2,20,1,25.99,'ToasterLabel','Toaster',);
+insert into Inventory 
+values (3,10,1,1250.99,'Dell Inspiron','Laptop');
+insert into Inventory 
+values (4,20,1,250.9,'Noise Cancellation','Headphones');
+
+

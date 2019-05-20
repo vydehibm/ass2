@@ -1,6 +1,8 @@
 package com.frosters.service;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,8 @@ public class InventoryService {
 		return inventoryRepository.findAll();		
 	}
 
-	public Inventory getSpecificItem(long skuId) {
-		return inventoryRepository.getOne(skuId);
+	public Optional<Inventory> getSpecificItem(long skuId) {
+		return inventoryRepository.findById(skuId);
 	}
 
 	public Inventory addNewItem(Inventory inventory) {

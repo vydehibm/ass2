@@ -34,8 +34,8 @@ public class InventoryController {
 	
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Inventory> getSpecificItemService(@PathVariable ("id") long skuId){
-		if (inventoryService.getSpecificItem(skuId) != null)
-			return new ResponseEntity<Inventory>(inventoryService.getSpecificItem(skuId), HttpStatus.OK);
+		if (inventoryService.getSpecificItem(skuId).isPresent())
+			return new ResponseEntity<Inventory>(inventoryService.getSpecificItem(skuId).get(), HttpStatus.OK);
 		else 
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	}
@@ -47,7 +47,7 @@ public class InventoryController {
 	
 	@RequestMapping(path = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Inventory> updateExistingItemService(@RequestBody Inventory inventory, @PathVariable ("id") long skuId){
-		if (inventoryService.getSpecificItem(skuId) != null)
+		if (inventoryService.getSpecificItem(skuId).isPresent())
 			return new ResponseEntity<Inventory>(inventoryService.updateExistingItem(inventory), HttpStatus.OK);
 		else
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -55,7 +55,7 @@ public class InventoryController {
 	
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<HttpStatus> deleteSpecificItemService(@PathVariable ("id") long skuId){
-		if (inventoryService.getSpecificItem(skuId) != null) {
+		if (inventoryService.getSpecificItem(skuId).isPresent()) {
 			inventoryService.deleteSpecificItem(skuId);
 			return new ResponseEntity<>(HttpStatus.OK);
 		}

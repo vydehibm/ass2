@@ -1,10 +1,11 @@
 package com.frosters.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Inventory {
-
+	@Id
 	private long skuId;
 	private String productName;
 	private String  productLabel;
