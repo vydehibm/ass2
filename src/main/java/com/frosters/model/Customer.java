@@ -11,8 +11,20 @@ public class Customer {
 	private long contactNumber;
 	private String address;
 	private String gender;
-	
-	
+
+
+	public Customer() {
+
+    }
+
+	public Customer(long customerId, String customerName, long contactNumber, String address, String gender) {
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+		this.gender = gender;
+	}
+
 	public long getCustomerId() {
 		return customerId;
 	}
